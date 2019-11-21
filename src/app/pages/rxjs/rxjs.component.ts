@@ -38,7 +38,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
       const intervalo = setInterval( () => {
 
         contador += 1;
-
+        console.log(contador);
 
         const salida = {
           valor: contador
