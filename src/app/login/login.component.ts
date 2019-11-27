@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 
   googleInit() {
 
+    /*
     gapi.load('auth2', () => {
 
       this.auth2 = gapi.auth2.init({
@@ -48,6 +49,7 @@ export class LoginComponent implements OnInit {
       this.attachSignin( document.getElementById('btnGoogle') );
 
     });
+    */
 
   }
 
