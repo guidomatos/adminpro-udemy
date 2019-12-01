@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuario/usuario.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-profile',
@@ -43,8 +44,6 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
-    console.log(archivo);
-
     if ( archivo.type.indexOf('image') < 0 ) {
       swal('Solo imágenes', 'El archivo seleccionado no es una imagen', 'error');
       this.imagenSubir = null;
@@ -53,10 +52,10 @@ export class ProfileComponent implements OnInit {
 
     this.imagenSubir = archivo;
 
-    let reader = new FileReader();
-    let urlImagenTemp = reader.readAsDataURL( archivo );
+    const reader = new FileReader();
+    const urlImagenTemp = reader.readAsDataURL( archivo );
 
-    reader.onloadend = () => this.imagenTemp = reader.result;
+    reader.onloadend = () => this.imagenTemp = reader.result.toString();
 
   }
 
