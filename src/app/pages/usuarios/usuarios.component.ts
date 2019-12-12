@@ -27,8 +27,7 @@ export class UsuariosComponent implements OnInit {
 
     this.cargarUsuarios();
 
-    this.modalUploadService.notificacion
-        .subscribe( resp => this.cargarUsuarios() );
+    this.modalUploadService.notificacion.subscribe( resp => this.cargarUsuarios() );
   }
 
   mostrarModal( id: string) {
@@ -41,8 +40,6 @@ export class UsuariosComponent implements OnInit {
 
     this.usuarioService.cargarUsuarios( this.desde )
           .subscribe( (resp: any) => {
-
-            //console.log(resp);
             this.totalRegistros = resp.total;
             this.usuarios = resp.usuarios;
             this.cargando = false;

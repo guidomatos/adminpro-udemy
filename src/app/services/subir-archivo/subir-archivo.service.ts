@@ -12,8 +12,8 @@ export class SubirArchivoService {
 
     return new Promise ( (resolve, reject) => {
 
-      let formData = new FormData();
-      let xhr = new XMLHttpRequest();
+      const formData = new FormData();
+      const xhr = new XMLHttpRequest();
 
       formData.append( 'imagen', archivo, archivo.name );
 
@@ -33,7 +33,7 @@ export class SubirArchivoService {
 
       };
 
-      let url = URL_SERVICIOS + '/upload/' + tipo + '/' + id;
+      const url = URL_SERVICIOS + '/uploads/' + tipo + '/' + id;
 
       xhr.open('PUT', url, true);
       xhr.send( formData );

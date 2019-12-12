@@ -62,7 +62,7 @@ export class UsuarioService {
   }
 
   loginGoogle( token: string ) {
-    let url = URL_SERVICIOS + '/login/google';
+    const url = URL_SERVICIOS + '/login/google';
 
     return this.http.post(url, { token })
       .pipe(map( (resp: any) => {
@@ -80,7 +80,7 @@ export class UsuarioService {
       localStorage.removeItem('email');
     }
 
-    let url = URL_SERVICIOS + '/login';
+    const url = URL_SERVICIOS + '/login';
     return this.http.post( url, usuario )
             .pipe(map( (resp: any) => {
 
@@ -94,7 +94,7 @@ export class UsuarioService {
 
   crearUsuario( usuario: Usuario ) {
 
-    let url = URL_SERVICIOS + '/usuario';
+    const url = URL_SERVICIOS + '/usuario';
 
     return this.http.post( url, usuario )
                 .pipe(map( (resp: any) => {
@@ -145,7 +145,6 @@ export class UsuarioService {
   cargarUsuarios(desde: number = 0) {
 
     const url = URL_SERVICIOS + '/usuario?desde=' + desde;
-
     return this.http.get( url );
 
   }
@@ -168,7 +167,5 @@ export class UsuarioService {
               return true;
             }));
   }
-
-  
 
 }
